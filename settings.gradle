@@ -12,5 +12,7 @@
 
 // To declare projects as part of a multi-project build use the 'include' method
 include 'MyWebApp'
+include 'JavaConcepts'
+include 'ProblemSolving'
 
-rootProject.name = 'ricemill'
+rootProject.name = 'java-training'
