@@ -31,4 +31,4 @@ jettyRunWar {
 	httpPort = 9090
 }
 
-group = 'ricemillWebApp'
+group = 'MyWebApp'
