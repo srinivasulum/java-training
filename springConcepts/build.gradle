@@ -51,4 +51,4 @@ jettyRunWar {
 	httpPort = 9090
 }
 
-group = 'MyWebApp'
+group = 'springConcepts'
