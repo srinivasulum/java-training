@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id = "personService" class='chapter01.person.service.PersonManagerService'>
+		<property name="personRepository" ref="personRepository"> </property>
+	</bean>
+
+	<bean id = "personRepository" class='chapter01.person.dao.PersonRepositoryImpl'>
+		<property name="dataSource">
+  		<list>
+  		<ref bean="person1" />
+  		</list>
+  		</property>
+	</bean>
+	
+	
+
+	<util:properties id = "personProp" location="classpath:person/persons.properties" />
+	
+	<bean id = "person1" class='chapter01.person.domain.Person'>
+		<property name="firstName" value="#{personProp.firstname}"></property>
+		<property name="lastName" value="#{personProp.lastname}"></property>
+		<property name="dob" value="#{personProp.dob}"></property>
+	</bean>
+
+</beans>
